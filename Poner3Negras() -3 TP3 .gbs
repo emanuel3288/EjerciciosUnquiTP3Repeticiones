@@ -1,0 +1,17 @@
+program {
+
+    Poner3Negras()
+    
+}
+
+procedure Poner3Negras() {
+    /*
+    PROPOSITO:     -Pone 3 bolitas negras en la celda actual.
+    PRECONDICION:  -Ninguna.
+    */
+    repeat(6) {
+        
+        Poner(Negro)
+        
+    }
+}

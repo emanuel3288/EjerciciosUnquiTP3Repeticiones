@@ -1,0 +1,32 @@
+program {
+
+    Mover3VecesAlEste()
+    
+}
+
+procedure Mover3VecesAlEste() {
+    /*
+    PROPOSITO:     -Posiciona el cabezal 3 celdas al este de la celda actual.
+    PRECONDICION:  -Deben existir al menos 3 celdas al este de la celda actual.
+    */
+    repeat(3) {
+        
+        Mover(Este)
+        
+    }
+}
+/*
+2. Moviendo tres veces al Este
+Escribir un procedimiento Mover3VecesAlEste() que mueva el cabezal tres posiciones al Este de la
+actual.
+a. ¿Qué similitudes encuentra entre este procedimiento y el anterior?
+b. ¿Qué cambiaría si quisiera hacer un procedimiento que mueva tres veces al Oeste, o tres al Sur?
+*/
+
+/*
+A-Es que ambos necesitan al menos 3 celdas lindantes a la celda actual.
+B-Lo único que modificaría es la expresión Oeste por la expresión Sur. Además
+en la precondicion pondría que necesito al menos 3 celdas al oeste o al sur según
+sea el caso. Por otro lado, en el proposito pondría que el cabezal se posiciona
+3 celdas al Oeste o al Sur de la celda actual.
+*/

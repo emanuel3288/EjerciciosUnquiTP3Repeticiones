@@ -1,0 +1,80 @@
+program {
+
+    DibujarRectánguloRojoYNegroDe5x3()
+    
+}
+
+procedure DibujarRectánguloRojoYNegroDe5x3() {
+    /*
+    PROPOSITO:     -Dibujar un rectangulo sólido desde la celda actual hacia el este. El rectangulo debe ser de 5 celdas de ancho y 3 celdas de alto.
+    PRECONDICION:  -Deben existir 4 celdas al este y  2 al norte de la celda inicial.
+                   -Las celdas donde estará el rectangulo deben estar vacias.
+    */
+    repeat (2) {
+        DibujarLineaHorizontalDe5RojoYNegro()
+        IrAlInicioDeLaSiguienteLineaHorizontalAlNorte()
+    }
+    DibujarLineaHorizontalDe5RojoYNegro()
+    IrAlInicioDelRectanguloRojoYNegroDe5X3()
+}
+
+procedure DibujarLineaHorizontalDe5RojoYNegro() {
+    /*
+    PROPOSITO:     -Dibujar desde la celda actual hacia el este una linea horizontal roja y negra de 5 celdas de ancho. 
+    PRECONDICION:  -Deben existir al menos 4 celdas al este de la celda actual.
+                   -Las celdas que serán utilizadas para dibujar la linea horizontal deben estar vacias.
+    */
+    repeat (4) {
+        DibujarPuntoRojoYNegro()
+        IrAlSiguientePuntoRojoYNegroDeLaLinea()
+    }
+    DibujarPuntoRojoYNegro()
+    VolverAlInicioDeLaLineaRojarYNegra()
+}
+
+procedure DibujarPuntoRojoYNegro() {
+    /*
+    PROPOSITO:     -Dibujar un punto rojo y negro de la linea horizontal.
+    PRECONDICION:  -La celda actual debe estar vacia.
+    */
+    Poner(Rojo)
+    Poner(Negro)
+}
+
+procedure IrAlSiguientePuntoRojoYNegroDeLaLinea() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal en el siguiente punto rojo y negro al este dentro de la linea.
+    PRECONDICION:  -Debe existir al menos la celda lindante al este.
+    */  
+    Mover(Este)
+}
+
+procedure VolverAlInicioDeLaLineaRojarYNegra() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal en el inicio de la linea horizontal roja y negra.
+    PRECONDICION:  -Deben existir al menos 4 celdas al oeste de la celda actual.
+    */
+    repeat(4) {
+        Mover(Oeste)
+    }
+}
+
+
+procedure IrAlInicioDeLaSiguienteLineaHorizontalAlNorte() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal al inicio de la siguiente linea horizontal del rectangulo rojo y negro de 5x3.
+    PRECONDICION:  -Debe existir al menos una celda al norte de la celda actual.
+    */
+    Mover(Norte)
+}
+
+procedure IrAlInicioDelRectanguloRojoYNegroDe5X3() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal en el inicio del rectangulo rojo y negro de 5x3.
+    PRECONDICION:  -Deben existir al menos 4 celdas al oeste y 3 celdas al sur de la celda actual.
+                   
+    */
+    Mover(Sur)
+    Mover(Sur)
+}
+

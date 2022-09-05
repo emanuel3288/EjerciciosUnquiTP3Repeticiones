@@ -1,0 +1,71 @@
+/*6. Pintando el tablero
+Escribir un procedimiento PintarElTableroDeAzul() que, asumiendo que el tablero tiene 10
+celdas de largo y 7 celdas de alto, pinte absolutamente todo el tablero con bolitas azules, dejando
+exactamente una bolita azul en cada celda.
+a. ¿Cuál es la precondición del procedimiento?
+b. ¿Se le ocurre otra estrategia para resolver el problema?
+Importante Recuerde que la estrategia de solución debe quedar clara a partir de la lectura del código.
+Use subtareas con nombres apropiados para dicho objetivo.*/
+
+program {
+    PintarElTableroDeAzul()
+}
+
+procedure PintarElTableroDeAzul() {
+    /*
+    PROPOSITO:     -Pintar desde la celda actual hacia norte y el este un rectangulo de 10 celdas de ancho y 7 de alto.
+    PRECONDICION:  -Deben existir al menos 9 celdas al este y 6 al norte de la celda actual. 
+                   -Las celdas del rectangulo deben estar vacias incluyendo la celda actual.
+    */
+    repeat(6){
+        PintarLineaAzulDeLargo10()
+        IrAInicioDeLaProximaLineaAlNorte()
+    }
+    PintarLineaAzulDeLargo10()
+    VolverAInicioDelTableroAzul()
+}
+
+//Primer subtarea
+procedure PintarLineaAzulDeLargo10() { 
+    /*
+    PROPOSITO:     -Pintar linea azul de 10 celdas de ancho incluyendo la celda actual.
+    PRECONDICION:  -Deben existir al menos 9 celdas al este de la celda actual.
+                   -La celda actual y las 9 celdas al este deben estar vacias.
+    */
+    repeat(9){
+        Poner(Azul)
+        Mover(Este)
+    }
+    Poner(Azul)
+    VolverAInicioDeLaLineaAzul()
+}
+
+procedure VolverAInicioDeLaLineaAzul() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal en el inicio de la linea azul.
+    PRECONDICION:  -Deben existir al menos 9 celdas al oeste de la celda actual.
+    */
+    repeat(9) {
+        Mover(Oeste)
+    }
+}
+
+//Segunda subtarea
+procedure IrAInicioDeLaProximaLineaAlNorte() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal al incio de la proxima linea horizontal azul al norte.
+    PRECONDICION:  -Debe existir al menos una celda al norte de la celda actual.
+    */
+    Mover(Norte)
+}
+
+//Tercer subtarea
+procedure VolverAInicioDelTableroAzul() {
+    /*
+    PROPOSITO:     -Posicionar el cabezal 5 celdas al sur en el inicio del rectangulo azul.
+    PRECONDICION:  -Deben existir al menos 5 celdas al sur de la celda actual.
+    */
+    repeat(6) {
+        Mover(Sur)
+    }
+}

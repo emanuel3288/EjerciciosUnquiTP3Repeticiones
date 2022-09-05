@@ -1,0 +1,17 @@
+program {
+
+    Mover3VecesAlNorte()
+    
+}
+
+procedure Mover3VecesAlNorte() {
+    /*
+    PROPOSITO:     -Posiciona el cabezal 3 celdas al norte de la celda actual.
+    PRECONDICION:  -Deben existir al menos 3 celdas al norte de la celda actual.
+    */
+    repeat(3) {
+        
+        Mover(Norte)
+        
+    }
+}
